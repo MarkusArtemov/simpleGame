@@ -20,7 +20,3 @@ const showResult = () => {
 
 let gameIntervall = setInterval(moveButton, 1000);
 button.addEventListener("click",showResult);
-
-
-  
-
