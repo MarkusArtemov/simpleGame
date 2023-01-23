@@ -4,6 +4,10 @@ const restartButton = document.getElementById("restart-button");
 
 
 const intervals = [];
+const resultMessages = ["Sorry, noch kein Millionär", "natürlich nicht", "bestimmt irgendwann"];
+let messageIndex = 0;
+
+
 
 const moveButton = () => {
   const x = Math.floor(Math.random() * (window.innerWidth - button.offsetWidth));
@@ -12,9 +16,11 @@ const moveButton = () => {
   button.style.left = x + "px";
   button.style.top = y + "px";
 }
- 
+
 const showResult = () => {
   endGameMessage.style.display = 'block';
+  endGameMessage.textContent = resultMessages[messageIndex % resultMessages.length];
+  messageIndex++;
   restartButton.style.display = 'block';
   button.style.display = 'none';
   clearInterval(gameInterval);
@@ -26,6 +32,7 @@ const restartGame = () => {
   button.style.display = 'block';
   setUpInterval();
 }
+
 
 const setUpInterval = () => {
   intervals.forEach(interval => clearInterval(interval));
