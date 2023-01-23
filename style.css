@@ -7,17 +7,24 @@
 
 body{
     height: 100vh;
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10vh;
     background-color: rgb(54, 52, 52);
 }
 
-#click-button{
+button{
     padding: 1rem;
     color: white;
     border: none;
     border-radius: 7px;
     background-color: rgb(96, 85, 194);
+}
+
+#restart-button{
+    display: none;
 }
 
 .endgameMessage{
